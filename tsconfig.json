@@ -4,7 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/nx-next-app"
+      "path": "./apps/nx-react-front"
+    },
+    {
+      "path": "./apps/nx-nest-e2e"
+    },
+    {
+      "path": "./apps/nx-nest"
     }
   ]
 }

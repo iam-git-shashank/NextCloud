@@ -1,0 +1,48 @@
+{
+  "dependencies": {
+    "@nestjs/mapped-types": "*"
+  },
+  "name": "@latest-workspace/nx-nest",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "targets": {
+      "build": {
+        "executor": "nx:run-commands",
+        "options": {
+          "command": "webpack-cli build",
+          "args": [
+            "node-env=production"
+          ]
+        },
+        "configurations": {
+          "development": {
+            "args": [
+              "node-env=development"
+            ]
+          }
+        }
+      },
+      "serve": {
+        "executor": "@nrwl/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@latest-workspace/nx-nest:build",
+          "runBuildTargetDependencies": false,
+          "watch": true
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@latest-workspace/nx-nest:build:development"
+          },
+          "production": {
+            "buildTarget": "@latest-workspace/nx-nest:build:production"
+          }
+        }
+      }
+    }
+  }
+}

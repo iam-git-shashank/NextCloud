@@ -1,82 +1,45 @@
-# LatestWorkspace
+# S3 Clone with Nx Workspace (Next.js + React + MinIO)
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This project is an S3 clone built with Nx workspace using a Next.js frontend and React app. The backend is built with a microservices architecture, with separate services for IAM, Data, and Metadata. MinIO is used as the object storage, and PostgreSQL with TypeORM is used for the database layer.This project is heavily inspired from the article 'https://www.codesmith.io/blog/diagramming-system-design-s3-storage-system'. More focused on structure than UI.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## Project Structure
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+This project follows a monorepo structure using [Nx](https://nx.dev) to manage multiple applications and libraries in a single workspace. The applications are separated into frontend (React/Next.js) and multiple backend microservices, with each service having its own logic and responsibility.
 
-## Finish your CI setup
+### Backend Microservices
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/ur5OEPQr9C)
+- **IAM Service**: Handles user authentication, authorization, and access management for the object storage.
+- **Data Service**: Manages the upload and download flows of objects, ensuring proper data handling and S3-like functionality.
+- **Metadata Service**: Tracks metadata for the uploaded objects, such as file names, sizes, and user information.
 
+### Frontend
 
-## Run tasks
+- **Next.js/React**: The frontend app is built using Next.js with React. It provides the user interface for uploading files, viewing uploaded files, and logging in.
 
-To run the dev server for your app, use:
+## Technologies Used
 
-```sh
-npx nx dev nx-next-app
+- **Nx Workspace**: Monorepo management and project structure.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **React**: For building interactive UIs.
+- **MinIO**: S3-compatible object storage solution for managing file uploads and downloads.
+- **PostgreSQL**: Used for storing metadata and relational data.
+- **TypeORM**: ORM for managing PostgreSQL database interactions.
+- **Microservices Architecture**: IAM, Data, and Metadata services are designed to be independent, making the system scalable and maintainable.
+
+## Nest App workflow
+
+-Microservices
+![Dashboard](https://github.com/iam-git-shashank/Weather-Dashboard-App/blob/main/screenshots/image.png)
+
+### Prerequisites
+
+- Node.js (preferably v16 or later)
+- PostgreSQL Database
+- MinIO Server (or any S3-compatible service)
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/s3-clone-nx.git
+cd s3-clone-nx
 ```
-
-To create a production bundle:
-
-```sh
-npx nx build nx-next-app
-```
-
-To see all available targets to run for a project, run:
-
-```sh
-npx nx show project nx-next-app
-```
-
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/next:app demo
-```
-
-To generate a new library, use:
-
-```sh
-npx nx g @nx/react:lib mylib
-```
-
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/next?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)

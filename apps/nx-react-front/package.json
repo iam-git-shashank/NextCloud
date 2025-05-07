@@ -1,0 +1,11 @@
+{
+  "name": "@latest-workspace/nx-react-front",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "@refinedev/antd": "^5.46.1",
+    "@refinedev/core": "^4.57.9",
+    "@refinedev/simple-rest": "^5.0.10",
+    "antd": "^5.24.9"
+  }
+}
