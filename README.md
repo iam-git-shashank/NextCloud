@@ -29,7 +29,7 @@ This project follows a monorepo structure using [Nx](https://nx.dev) to manage m
 ## Nest App workflow
 
 -Microservices
-![Dashboard](https://github.com/iam-git-shashank/Weather-Dashboard-App/blob/main/screenshots/image.png)
+![services](https://github.com/iam-git-shashank/NextCloud/blob/master/screenshots/image.png)
 
 ### Prerequisites
 
