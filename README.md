@@ -14,7 +14,7 @@ This project follows a monorepo structure using [Nx](https://nx.dev) to manage m
 
 ### Frontend
 
-- **Next.js/React**: The frontend app is built using Next.js with React. It provides the user interface for uploading files, viewing uploaded files, and logging in.
+- **React**: The frontend app is built using React with Refine. It provides the user interface for uploading files, viewing uploaded files, and logging in.Refine provides many built-in hooks which make the development easy. 
 
 ## Technologies Used
 
@@ -24,7 +24,7 @@ This project follows a monorepo structure using [Nx](https://nx.dev) to manage m
 - **MinIO**: S3-compatible object storage solution for managing file uploads and downloads.
 - **PostgreSQL**: Used for storing metadata and relational data.
 - **TypeORM**: ORM for managing PostgreSQL database interactions.
-- **Microservices Architecture**: IAM, Data, and Metadata services are designed to be independent, making the system scalable and maintainable.
+- **Microservices Architecture**: Auth, Data, and Metadata services are designed to be independent, making the system scalable and maintainable.
 
 ## Nest App workflow
 
