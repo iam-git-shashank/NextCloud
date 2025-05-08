@@ -37,9 +37,3 @@ This project follows a monorepo structure using [Nx](https://nx.dev) to manage m
 - PostgreSQL Database
 - MinIO Server (or any S3-compatible service)
 
-### Clone the Repository
-
-```bash
-git clone https://github.com/your-username/s3-clone-nx.git
-cd s3-clone-nx
-```
